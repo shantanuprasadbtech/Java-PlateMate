@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class Menu{
     private ArrayList<MenuItem> items;

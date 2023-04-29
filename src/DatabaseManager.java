@@ -23,6 +23,7 @@ public class DatabaseManager {
                     + " name VARCHAR(255) NOT NULL,"
                     + " contact VARCHAR(20) NOT NULL,"
                     + " no_of_guests INT NOT NULL,"
+                    + " table_no INT NOT NULL,"
                     + " PRIMARY KEY (id))";
             stmt.executeUpdate(createTableSql);
         } catch (SQLException e) {
@@ -30,13 +31,13 @@ public class DatabaseManager {
         }
     }
 
-    public static void InsertRecord(String name, int contact, int noOfGuests) {
+    public static void InsertRecord(String name, int contact, int noOfGuests, int tableNo) {
         try (java.sql.Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
              Statement stmt = conn.createStatement()) {
 
             // Insert values entered by user into the table
-            String insertSql = "INSERT INTO records (name, contact, no_of_guests) "
-                    + "VALUES ('" + name + "', '" + contact + "', " + noOfGuests + ")";
+            String insertSql = "INSERT INTO records (name, contact, no_of_guests, table_no) "
+                    + "VALUES ('" + name + "', '" + contact + "', '" + noOfGuests + "', " + tableNo + ")";
             stmt.executeUpdate(insertSql);
 
         } catch (SQLException e) {
