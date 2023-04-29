@@ -11,10 +11,10 @@ public class UserInfo {
         String name = sc.nextLine();
 
         System.out.println("Enter your contact information:");
-        Integer contact = sc.nextInt();
+        int contact = sc.nextInt();
 
         System.out.println("Enter the number of guests");
-        Integer noOfGuests = sc.nextInt();
+        int noOfGuests = sc.nextInt();
 
         User user = new User(name, contact, noOfGuests);
         System.out.println("User added successfully: " + user);
