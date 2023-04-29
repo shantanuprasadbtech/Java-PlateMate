@@ -38,11 +38,9 @@ public class DatabaseManager {
             String insertSql = "INSERT INTO records (name, contact, no_of_guests) "
                     + "VALUES ('" + name + "', '" + contact + "', " + noOfGuests + ")";
             stmt.executeUpdate(insertSql);
-            System.out.println("Record inserted successfully!");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
     }
 }

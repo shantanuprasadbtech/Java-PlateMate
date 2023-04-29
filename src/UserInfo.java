@@ -3,9 +3,8 @@ import java.util.Scanner;
 public class UserInfo {
     
     public static void main(String[] args){
+        DatabaseManager sql = new DatabaseManager();
         Scanner sc = new Scanner(System.in);
-
-
 
         System.out.println("Enter your name:");
         String name = sc.nextLine();
@@ -16,8 +15,8 @@ public class UserInfo {
         System.out.println("Enter the number of guests");
         int noOfGuests = sc.nextInt();
 
-        User user = new User(name, contact, noOfGuests);
-        System.out.println("User added successfully: " + user);
+        sql.InsertRecord(name, contact, noOfGuests);
+        System.out.println("User added successfully: " + name);
 
         String[] tableArray = new String[] {'Top Right', 'Middle Right', 'Bottom Right', 'Top Left', 'Middle Left', 'Bottom Left'}
         System.out.println("Please choose a table:");
