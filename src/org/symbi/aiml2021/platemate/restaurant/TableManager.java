@@ -42,5 +42,13 @@ public class TableManager {
         }
     }
 
+ public Guest getGuestForTable(int tableNo) {
+        for(Map.Entry<Table,Guest> entry : tableGuestMap.entrySet()) {
+            if(entry.getKey().getId() == tableNo) {
+                return entry.getValue();
+            }
+        }
+        return null;
+    }
 
 }

@@ -10,6 +10,8 @@ public class Order {
     private int tableNo;
     private Map<MenuItem, Integer> orderItems;
 
+    private String status;
+
     public Order(int tableNo) {
         this.tableNo = tableNo;
         this.id++;

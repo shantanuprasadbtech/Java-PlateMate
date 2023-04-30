@@ -16,7 +16,7 @@ public class Main {
         order.addOrderItem(restaurant.getMenuItem(1), 2);
         order.addOrderItem(restaurant.getMenuItem(2), 1);
         waiter.repeatOrder(order);
-
+        waiter.placeOrder(order);
 
     }
 }

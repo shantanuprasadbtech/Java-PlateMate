@@ -21,10 +21,12 @@ public class Restaurant {
         this.restcontact = restcontact;
 
         this.tableManager = new TableManager(numberOfTables);
-        this.waiter = new Waiter("John");
+        this.waiter = new Waiter("Johnny");
         this.chef = new Chef("Jack");
         this.menuCard = new MenuCard();
         this.waiter.setMenuCard(this.menuCard);
+        this.waiter.setChef(this.chef);
+        this.waiter.setTableManager(this.tableManager);
     }
 
     public String getRestaurantName() {
