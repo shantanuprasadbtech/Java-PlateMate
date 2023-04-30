@@ -21,4 +21,5 @@ public class UserInfo {
         System.out.println("User added successfully: " + name);
 
     }
+
 }
