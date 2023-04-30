@@ -20,6 +20,6 @@ public class Restaurant {
         return "020-12345678";
     }
     public int getNumberOfTables(){
-        return 10;
+        return 7;
     }
 }
