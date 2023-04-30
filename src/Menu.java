@@ -74,4 +74,13 @@ public class Menu{
             
         }
     }
+
+    public Object getPrice(String itemName) {
+    }
+
+    public void editItem(String itemName, String newItemName) {
+    }
+
+    public void deleteItem(String itemName) {
+    }
 }

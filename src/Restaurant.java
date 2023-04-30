@@ -1,13 +1,13 @@
 public class Restaurant {
-    public String name;
-    public String address;
-    public String contact;
+    public String restname;
+    public String restaddress;
+    public String restcontact;
     public int numberOfTables;
 
-    public Restaurant(String name, String address, String contact, int numberOfTables){
-        this.name = name;
-        this.address = address;
-        this.contact = contact;
+    public Restaurant(String restname, String restaddress, String restcontact, int numberOfTables){
+        this.restname = restname;
+        this.restaddress = restaddress;
+        this.restcontact = restcontact;
         this.numberOfTables = numberOfTables;
     }
     public String getRestaurantName(){

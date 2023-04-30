@@ -13,6 +13,9 @@ public class Order {
         this.status = "open";
     }
 
+    public Order(String itemName, Object price) {
+    }
+
     public void addMenuItem(MenuItem item) {
         menuItems.add(item);
     }
@@ -24,7 +27,7 @@ public class Order {
     public double getTotalCost() {
         double total = 0.0;
         for (MenuItem item : menuItems) {
-            total += item.getCost();
+            total += item.getTotalCost();
         }
         return total;
     }
@@ -35,5 +38,9 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Object getItemName() {
+        return null;
     }
 }
