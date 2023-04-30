@@ -1,3 +1,5 @@
+package org.symbi.aiml2021.platemate;
+
 public class Restaurant {
     public String restname;
     public String restaddress;
