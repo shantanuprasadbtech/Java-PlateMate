@@ -17,3 +17,18 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## database preparartion
+- create a database named `platemate`
+- create table `menucard` 
+>>create table menucard (id int primary key auto_increment, name varchar(20),  price numeric, description varchar(100), status boolean);
+- insert items with  following commands
+> insert into menucard (name, price, description, status) values ('Veg Biryani', 200, 'Gourmet Veg Biryani ', true);
+
+> insert into menucard (name, price, description, status) values ('Veg Paneer Biryani', 200, 'Gourmet Biryani with Cotton Cheese', true);
+
+> insert into menucard (name, price, description, status) values ('Pav Bhaji', 200, 'Spiced Vegetable curry with buttery bread roll', true);
+
+> insert into menucard (name, price, description, status) values ('Veg Pulao', 200, 'One pot rice Dish infused with fragrant spices. ', true);
+
+> insert into menucard (name, price, description, status) values ('Veg Fried Rice', 200, 'lightly spice rice served with vibrant array of sauteed veggies', true);
