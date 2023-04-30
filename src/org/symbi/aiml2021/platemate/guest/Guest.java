@@ -1,6 +1,8 @@
-package org.symbi.aiml2021.platemate;
+package org.symbi.aiml2021.platemate.guest;
 
-public class Guest {
+import org.symbi.aiml2021.platemate.general.Person;
+
+public class Guest implements Person {
     private static int id;
     private String name;
     private String contact;
