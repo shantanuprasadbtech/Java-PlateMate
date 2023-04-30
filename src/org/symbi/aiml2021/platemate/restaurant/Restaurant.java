@@ -2,6 +2,7 @@ package org.symbi.aiml2021.platemate.restaurant;
 
 import org.symbi.aiml2021.platemate.guest.Guest;
 import org.symbi.aiml2021.platemate.restaurant.menu.MenuCard;
+import org.symbi.aiml2021.platemate.restaurant.menu.MenuItem;
 
 public class Restaurant {
     private final Waiter waiter;
@@ -57,5 +58,9 @@ public class Restaurant {
 
     public MenuCard getMenuCard() {
         return this.menuCard;
+    }
+
+    public MenuItem getMenuItem(int i) {
+        return menuCard.getMenuItems().get(i);
     }
 }

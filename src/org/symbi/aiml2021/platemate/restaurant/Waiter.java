@@ -16,5 +16,14 @@ public class Waiter extends Employee{
     public void showMenucard() {
         menuCard.showMenuCard();
     }
+
+    public Order createOrder(int tableNo) {
+        return new Order(tableNo);
+    }
+
+    public void repeatOrder(Order order) {
+        System.out.println("Order for table no. " + order.getTableNo() + " is: ");
+        order.showOrder();
+    }
 }
 
