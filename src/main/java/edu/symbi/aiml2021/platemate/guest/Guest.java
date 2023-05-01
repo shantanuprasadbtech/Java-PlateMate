@@ -1,8 +1,8 @@
-package org.symbi.aiml2021.platemate.guest;
+package edu.symbi.aiml2021.platemate.guest;
 
-import org.symbi.aiml2021.platemate.general.Person;
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.IPerson;
 
-public class Guest implements Person {
+public class Guest implements IPerson {
     private static int id;
     private String name;
     private String contact;

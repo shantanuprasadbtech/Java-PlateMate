@@ -1,10 +1,12 @@
-package org.symbi.aiml2021.platemate.restaurant.menu;
+package edu.symbi.aiml2021.platemate.restaurant.menu;
+
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.IMenuCard;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuCard {
+public class MenuCard implements IMenuCard {
     // load menu items from database and store them in this list
     private static final String QUERY = "SELECT id, name, price, description FROM platemate.menucard where status = 1";
     private List<MenuItem> menuItems;   // array of menu items
@@ -26,7 +28,8 @@ public class MenuCard {
             while(rs.next()){
                 //Display values
 
-                MenuItem menuItem = new MenuItem(rs.getString("name"),
+                MenuItem menuItem = new MenuItem(rs.getInt("id"),
+                        rs.getString("name"),
                         rs.getString("description"),
                         rs.getDouble("price"));
                 menuItems.add(menuItem);
@@ -43,10 +46,7 @@ public class MenuCard {
     }
 
 
-    public void showMenuCard() {
-        // print menu items
-        for(MenuItem menuItem: menuItems){
-            System.out.println(menuItem.toString());
-        }
+    public List<MenuItem> showMenuCard() {
+        return new ArrayList<>(menuItems);
     }
 }

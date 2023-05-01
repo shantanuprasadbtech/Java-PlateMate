@@ -1,4 +1,4 @@
-package org.symbi.aiml2021.platemate.restaurant.menu;
+package edu.symbi.aiml2021.platemate.restaurant.menu;
 
 import java.util.Objects;
 
@@ -8,7 +8,8 @@ public class MenuItem {
     private String itemDescription;
     private double itemPrice;
 
-    public MenuItem(String itemName, String itemDescription, double itemPrice) {
+    public MenuItem(int id, String itemName, String itemDescription, double itemPrice) {
+        this.id = id;
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;

@@ -1,20 +1,22 @@
-package org.symbi.aiml2021.platemate.restaurant;
+package edu.symbi.aiml2021.platemate.restaurant;
 
-import org.symbi.aiml2021.platemate.restaurant.menu.MenuItem;
+import edu.symbi.aiml2021.platemate.restaurant.menu.MenuItem;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Order {
-    private static int id;
+    private static int uniqueId;
     private int tableNo;
     private Map<MenuItem, Integer> orderItems;
 
     private String status;
 
+    private int id;
     public Order(int tableNo) {
         this.tableNo = tableNo;
-        this.id++;
+        this.id = uniqueId;
+        uniqueId++;
         this.orderItems = new HashMap<>();
     }
     public void addOrderItem(MenuItem menuItem, int quantity) {
@@ -34,5 +36,9 @@ public class Order {
         for(Map.Entry<MenuItem, Integer> entry : orderItems.entrySet()) {
             System.out.println("MenuItem :" + ((MenuItem)(entry.getKey())).getItemName() + " : Qty:" + entry.getValue());
         }
+    }
+
+    public int getId() {
+        return id;
     }
 }

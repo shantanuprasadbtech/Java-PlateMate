@@ -1,16 +1,16 @@
-package org.symbi.aiml2021.platemate.restaurant;
+package edu.symbi.aiml2021.platemate.restaurant;
 
-import org.symbi.aiml2021.platemate.general.Person;
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.IPerson;
 
-import java.util.*;
-public abstract class Employee implements Person {
-    private static int id;
+public abstract class Employee implements IPerson {
+    private static int uniqueId;
     private String name;
     private String JobTitle;
 
-
+    private int id;
     public Employee(String name, String JobTitle){
-        this.id++;
+        this.id = uniqueId;
+        uniqueId++;
         this.name = name;
         this.JobTitle = JobTitle;
 
@@ -26,7 +26,7 @@ public abstract class Employee implements Person {
         return JobTitle;
     }
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 }

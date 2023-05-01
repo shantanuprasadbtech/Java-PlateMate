@@ -1,4 +1,4 @@
-package org.symbi.aiml2021.platemate.restaurant;
+package edu.symbi.aiml2021.platemate.restaurant;
 
 import java.util.Objects;
 
