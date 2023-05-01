@@ -4,9 +4,12 @@ import edu.symbi.aiml2021.platemate.guest.Guest;
 import edu.symbi.aiml2021.platemate.restaurant.Restaurant;
 import edu.symbi.aiml2021.platemate.restaurant.Waiter;
 import edu.symbi.aiml2021.platemate.restaurant.exceptions.NoTablesAvailableException;
+import edu.symbi.aiml2021.platemate.restaurant.menu.MenuItem;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/restaurant")
@@ -25,6 +28,11 @@ public class RestaurantApiController {
     @RequestMapping(value = "/requestWaiter", method = RequestMethod.GET)
     public Waiter restaurantRequestWaiter(int tableId) throws NoTablesAvailableException {
         return restaurant.assignWaiter(tableId);
+    }
+
+    @RequestMapping(value = "/waiterShowsMenuCard", method = RequestMethod.GET)
+    public List<MenuItem> restaurantWaiterShowsMenuCard(int waiterId) {
+        return restaurant.waiterShowsMenucard(waiterId);
     }
 
 

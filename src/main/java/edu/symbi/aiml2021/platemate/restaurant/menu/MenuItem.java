@@ -40,4 +40,16 @@ public class MenuItem {
                 ", itemPrice=" + itemPrice +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public double getItemPrice() {
+        return itemPrice;
+    }
 }
