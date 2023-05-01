@@ -57,4 +57,9 @@ public class TableManager implements ITableManager {
         return null;
     }
 
+    @Override
+    public Map<Table, Guest> getTableStatus() {
+        return tableGuestMap;
+    }
+
 }

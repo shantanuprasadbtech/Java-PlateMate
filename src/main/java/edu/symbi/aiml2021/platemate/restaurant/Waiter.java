@@ -27,5 +27,10 @@ public class Waiter extends Employee implements IWaiter {
     public List<MenuItem> showMenuCard() {
         return menuCard.getMenuItems();
     }
+
+    @Override
+    public Order createOrder(int tableId) {
+        return new Order(tableId, this, kitchenCoordinator, tableManager);
+    }
 }
 

@@ -1,44 +1,61 @@
 package edu.symbi.aiml2021.platemate.restaurant;
 
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.IKitchenCoordinator;
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.ITableManager;
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.IWaiter;
 import edu.symbi.aiml2021.platemate.restaurant.menu.MenuItem;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Order {
     private static int uniqueId;
-    private int tableNo;
-    private Map<MenuItem, Integer> orderItems;
+    private final IKitchenCoordinator kitchenCoordinator;
+    private final ITableManager tableManager;
 
-    private String status;
+    private OrderDetail orderDetail;
 
-    private int id;
-    public Order(int tableNo) {
-        this.tableNo = tableNo;
-        this.id = uniqueId;
+    private IWaiter waiter;
+
+
+    public Order(int tableId, Waiter waiter, IKitchenCoordinator kitchenCoordinator, ITableManager tableManager) {
         uniqueId++;
-        this.orderItems = new HashMap<>();
+        this.orderDetail = new OrderDetail(uniqueId, tableId);
+        this.waiter = waiter;
+        this.kitchenCoordinator = kitchenCoordinator;
+        this.tableManager = tableManager;
+
     }
-    public void addOrderItem(MenuItem menuItem, int quantity) {
-        if(orderItems.containsKey(menuItem)) {
-            orderItems.put(menuItem, orderItems.get(menuItem) + quantity);
-            return;
-        }
-        orderItems.put(menuItem, quantity);
+
+    public OrderDetail getOrderDetail() {
+        return orderDetail;
+    }
+
+    public int getId() {
+        return this.orderDetail.getId();
     }
 
 
     public int getTableNo() {
-        return tableNo;
+        return this.orderDetail.getTableNo();
     }
 
-    public void showOrder() {
-        for(Map.Entry<MenuItem, Integer> entry : orderItems.entrySet()) {
-            System.out.println("MenuItem :" + ((MenuItem)(entry.getKey())).getItemName() + " : Qty:" + entry.getValue());
+    public synchronized void updateOrder(int menuId, int quantity) {
+        // The menu ID is starting with 1 whereas java list has members starting with 0
+        MenuItem menuItem = waiter.showMenuCard().get(menuId-1);
+        if(orderDetail.getOrderItems().containsKey(menuItem) ) {
+            orderDetail.getOrderItems().put(menuItem, orderDetail.getOrderItems().get(menuItem) + quantity);
+        } else {
+            orderDetail.getOrderItems().put(menuItem, quantity);
         }
+
     }
 
-    public int getId() {
-        return id;
+    public void placeOrder() {
+        this.orderDetail.setStatus("Order placed");
+        kitchenCoordinator.receiveAndPrepareOrder(this);
+
+    }
+
+    public IWaiter getWaiter() {
+        return waiter;
     }
 }
