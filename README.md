@@ -19,9 +19,19 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
 ## database preparartion
+-install mysql
+-in mysql terminal
+>create user 'restaurant'@'%' identified by 'restaurant';
+- GRANT INSERT ON *.* TO 'restaurant'@'%';
+- mysql -u restaurant -p
+#Type password as 'restaurant'
 - create a database named `platemate`
-- create table `menucard` 
->>create table menucard (id int primary key auto_increment, name varchar(20),  price numeric, description varchar(100), status boolean);
+>create database platemate;
+
+>use platemate; 
+
+>create table menucard (id int primary key auto_increment, name varchar(20),  price numeric, description varchar(100), status boolean);
+
 - insert items with  following commands
 > insert into menucard (name, price, description, status) values ('Veg Biryani', 200, 'Gourmet Veg Biryani ', true);
 
@@ -32,3 +42,10 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 > insert into menucard (name, price, description, status) values ('Veg Pulao', 200, 'One pot rice Dish infused with fragrant spices. ', true);
 
 > insert into menucard (name, price, description, status) values ('Veg Fried Rice', 200, 'lightly spice rice served with vibrant array of sauteed veggies', true);
+
+## Maven commands
+- mvn clean install
+- mvn spring-boot:run
+
+## Swagger
+- http://localhost:8080/swagger-ui.html
