@@ -1,8 +1,9 @@
 package edu.symbi.aiml2021.platemate.restaurant;
 
-import edu.symbi.aiml2021.platemate.restaurant.interfaces.IPerson;
+import edu.symbi.aiml2021.platemate.restaurant.interfaces.IEmployee;
 
-public abstract class Employee implements IPerson {
+
+public abstract class Employee implements IEmployee {
     private static int uniqueId;
     private String name;
     private String JobTitle;
