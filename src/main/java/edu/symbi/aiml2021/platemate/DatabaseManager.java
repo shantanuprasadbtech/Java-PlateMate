@@ -2,7 +2,6 @@ package edu.symbi.aiml2021.platemate;
 import com.sun.tools.javac.Main;
 
 import java.util.*;
-import java.io.*;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
