@@ -20,7 +20,7 @@ public class MenuCard implements IMenuCard {
         // load menu items from database using jdbc
         // and store them in this.menuItems
         menuItems = new ArrayList<MenuItem>();
-        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/", "restaurant", "restaurant");
+        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/", "root", "system");
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(QUERY);
         ) {
