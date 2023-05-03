@@ -20,7 +20,6 @@ public class Check {
     public int getId() {
         return id;
     }
-//This is a getter to return value of total
     public double getTotal() {
         return total;
     }
