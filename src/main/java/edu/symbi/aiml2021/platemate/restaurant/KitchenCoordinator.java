@@ -24,7 +24,7 @@ public class KitchenCoordinator extends Employee  implements IKitchenCoordinator
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        order.getOrderDetail().setStatus("Ready for Serving");
+        order.getOrderDetail().setStatus("Ready for Serving"); //Print status as serving
         try {
             sleep(1000);
         } catch (InterruptedException e) {
