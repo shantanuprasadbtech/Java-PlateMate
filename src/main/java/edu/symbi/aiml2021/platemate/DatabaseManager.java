@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class DatabaseManager {
     static Scanner sc = new Scanner(System.in);
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    public static void main(String[] args){
+    public static void main(String[] args) {
         try {
             System.out.println("Enter your MySQL server username: ");
             String username = sc.nextLine();
@@ -19,51 +19,59 @@ public class DatabaseManager {
             dm.createDatabase(username, password);
             dm.createTable(username, password);
 
-            System.out.println("\nEnter which task you want: ");
-            System.out.println("1) Add menu item");
-            System.out.println("2) Delete menu item");
-            System.out.println("3) Update menu item");
-
-            int choice = sc.nextInt();
 
 
-            switch (choice) {
-                case 1:
-                    System.out.println("Enter item name: ");
-                    String name = br.readLine();
-                    System.out.println("Enter item price: ");
-                    double price = Double.parseDouble(br.readLine());
-                    System.out.println("Enter item description: ");
-                    String description = br.readLine();
-                    System.out.println("Enter item availability status (True or False): ");
-                    boolean status = Boolean.parseBoolean(br.readLine());
-                    int statusInt = status ? 1 : 0;
-                    dm.insertRecord(username, password, name, price, description, statusInt);
-                    System.out.println("Menu item successfully added. ");
-                    break;
-                case 2:
-                    System.out.println("Enter id of item to delete: ");
-                    int id = sc.nextInt();
-                    dm.deleteRecord(username, password, id);
-                    System.out.println("Menu item successfully deleted ");
-                    break;
-                case 3:
-                    System.out.println("Enter id of item to update: ");
-                    id = Integer.parseInt(br.readLine());
-                    System.out.println("Enter new item name: ");
-                    name = br.readLine();
-                    System.out.println("Enter new item price: ");
-                    price = Double.parseDouble(br.readLine());
-                    System.out.println("Enter new item description: ");
-                    description = br.readLine();
-                    System.out.println("Enter new item availability status (True or False): ");
-                    status = Boolean.parseBoolean(br.readLine());
-                    statusInt = status ? 1 : 0;
-                    dm.updateRecord(username, password, id, name, price, description, statusInt);
-                    System.out.println("Menu item successfully updated. ");
-                    break;
+            boolean quit = false;
+
+            do {
+                System.out.println("\n1) Add menu item");
+                System.out.println("2) Delete menu item");
+                System.out.println("3) Update menu item");
+                System.out.println("4) Quit");
+                System.out.println("Enter which task you want: ");
+                int choice = sc.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter item name: ");
+                        String name = br.readLine();
+                        System.out.println("Enter item price: ");
+                        double price = Double.parseDouble(br.readLine());
+                        System.out.println("Enter item description: ");
+                        String description = br.readLine();
+                        System.out.println("Enter item availability status (True or False): ");
+                        boolean status = Boolean.parseBoolean(br.readLine());
+                        int statusInt = status ? 1 : 0;
+                        dm.insertRecord(username, password, name, price, description, statusInt);
+                        System.out.println("Menu item successfully added. ");
+                        break;
+                    case 2:
+                        System.out.println("Enter id of item to delete: ");
+                        int id = Integer.parseInt(br.readLine());
+                        dm.deleteRecord(username, password, id);
+                        System.out.println("Menu item successfully deleted ");
+                        break;
+                    case 3:
+                        System.out.println("Enter id of item to update: ");
+                        id = Integer.parseInt(br.readLine());
+                        System.out.println("Enter new item name: ");
+                        name = br.readLine();
+                        System.out.println("Enter new item price: ");
+                        price = Double.parseDouble(br.readLine());
+                        System.out.println("Enter new item description: ");
+                        description = br.readLine();
+                        System.out.println("Enter new item availability status (True or False): ");
+                        status = Boolean.parseBoolean(br.readLine());
+                        statusInt = status ? 1 : 0;
+                        dm.updateRecord(username, password, id, name, price, description, statusInt);
+                        System.out.println("Menu item successfully updated. ");
+                        break;
+                    case 4:
+                        quit = true;
+                        break;
+                }
             }
-
+            while (!quit);
         }
         catch (InputMismatchException | IOException e) {
             System.out.println("Invalid input");
