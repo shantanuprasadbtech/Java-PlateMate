@@ -31,10 +31,6 @@ The `src/main/java` directory contains the main source code for the project. Wit
 
 This system enables the restaurant staff to efficiently take orders from customers and manage them effectively. It ensures seamless communication between the kitchen and the service staff to deliver a smooth dining experience.
 
-### Inventory Management
-
-The system keeps track of the restaurant's inventory in real-time. It monitors the ingredients, supplies, and alerts the concerned personnel when any item reaches a pre-defined low level, ensuring that the restaurant operations are never affected due to the unavailability of resources.
-
 ### User-friendly Interface
 
 The application has a user-friendly interface that allows employees to quickly understand and adapt to the system, minimizing the training period.
