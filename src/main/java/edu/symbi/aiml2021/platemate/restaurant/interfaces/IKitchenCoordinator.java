@@ -7,3 +7,4 @@ public interface IKitchenCoordinator {
     void receiveAndPrepareOrder(Order order);
 
 }
+//Cook

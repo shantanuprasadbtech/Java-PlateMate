@@ -16,3 +16,4 @@ public interface ITableManager {
 
     Map<Table, Guest> getTableStatus();
 }
+//TableManager

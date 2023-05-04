@@ -4,3 +4,4 @@ public interface IEmployee extends IPerson {
     int getId();
     String getName();
 }
+//Employee interface
