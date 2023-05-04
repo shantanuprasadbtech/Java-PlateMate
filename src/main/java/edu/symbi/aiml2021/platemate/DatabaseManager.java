@@ -41,7 +41,12 @@ public class DatabaseManager {
                         String description = br.readLine();
                         System.out.println("Enter item availability status (True or False): ");
                         boolean status = Boolean.parseBoolean(br.readLine());
-                        int statusInt = status ? 1 : 0;
+                        int statusInt;
+                        if (status) {
+                            statusInt = 1;
+                        } else {
+                            statusInt = 0;
+                        }
                         dm.insertRecord(username, password, name, price, description, statusInt);
                         System.out.println("Menu item successfully added. ");
                         break;
