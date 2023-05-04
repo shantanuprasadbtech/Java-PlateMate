@@ -7,4 +7,3 @@ public interface IAccountant extends IEmployee {
 
     Check prepareCheck(OrderDetail orderDetail);
 }
-//Accountant interface

@@ -48,7 +48,7 @@ public class Order {
         }
 
     }
-//Order
+
     public void placeOrder() {
         this.orderDetail.setStatus("Order placed");
         kitchenCoordinator.receiveAndPrepareOrder(this);

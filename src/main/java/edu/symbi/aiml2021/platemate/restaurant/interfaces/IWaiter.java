@@ -11,4 +11,3 @@ public interface IWaiter extends  IEmployee{
 
     Order createOrder(int tableId);
 }
-//Iwaiter
